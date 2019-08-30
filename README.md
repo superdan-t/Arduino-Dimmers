@@ -8,8 +8,32 @@ Further, this libary includes special effects such as strobing, fading, and sequ
 
 # Included Functions
 
-## `Dimmer.begin()`
+## Initialization
+
+### `Dimmer.begin()`
 Does whatever is necessary to start up a dimmer. If "pin" is the output method, it will set the pin mode to output. Make sure that the pin is defined before calling `begin()` or it will use whatever value is currently in "pin," which can be unpredictable! If the method is *not* pin and/or initializing the dimmer requires something else, look at the overload of this function (directly below)
 
-## `Dimmer.begin(DimmerController dcr)`
-DimmerControllers are a further abstraction of dimmers and are explained later. They allow for advanced control of dimmers, such as overriding the built-in "begin" function. `DimmerController.onBegin(yourBeginFunction)`, assuming that `void yourBeginFunction(Dimmer dim) {}` is a defined and you have supplied this `DimmerController` to this procedure, will cause `yourBeginFunction(Dimmer dim)` to be called in place of the typical begin function.
+### `Dimmer.begin(DimmerController dcr)`
+DimmerControllers are a further abstraction of dimmers and are explained later. They allow for advanced control of dimmers, such as overriding the built-in "begin" function. `DimmerController.onBegin(yourBeginFunction)`, assuming that `void yourBeginFunction(Dimmer dim) {}` is defined and you have supplied this `DimmerController` to this procedure, will cause `yourBeginFunction(Dimmer dim)` to be called in place of the typical begin function.
+
+### Example of initialization
+```C++
+DimmerController dcr;
+Dimmer redLED;
+Dimmer blueLED;
+
+void setup() {
+  dcr.onBegin(customBeginFunction);
+  
+  blueLED.setPin(6);
+  blueLED.enable();
+  
+  redLED.setPin(7);
+  redLED.enable();
+  
+  blueLED.begin(); //This uses the built-in begin function
+  redLED.begin(dcr); //This will call customBeginFunction(Dimmer dim), where dim will be redLED
+}
+
+void customBeginFunction(Dimmer dim) {
+}
