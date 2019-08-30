@@ -1,0 +1,19 @@
+DimmerControlMaster	KEYWORD1
+Dimmer	KEYWORD1
+
+intensity	KEYWORD2
+function	KEYWORD2
+data	KEYWORD2
+isEnabled	KEYWORD2
+isBipolar	KEYWORD2
+isInverse	KEYWORD2
+setPin	KEYWORD2
+setMethod	KEYWORD2
+setFunction	KEYWORD2
+setData	KEYWORD2
+enable	KEYWORD2
+disable	KEYWORD2
+bipolar	KEYWORD2
+dimming	KEYWORD2
+inverse	KEYWORD2
+direct	KEYWORD2
