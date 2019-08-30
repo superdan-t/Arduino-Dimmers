@@ -1,9 +1,7 @@
-DimmerControlMaster is an abstraction of the Arduino pins intended for lights/drivers/relays.
+"Dimmers" is an abstraction of the Arduino pins intended for lights/drivers/relays.
 
-A DimmerControlMaster (DCM) is a class object that provides the overall control structure for ALL
-dimmers.
+A Dimmer is an object that represents one "output," whether it is actually on another device or corresponds directly to a pin, and it's properties. There are a wide variety of ways required to control an output device, whether it is an LED driver, relay, or so on. Relays don't use PWM. Some are normally open and others are normally closed. LED drivers and transistors normally use PWM to control intensity. Alternatively, you may be chaining two Arduinos together in order to minimize the usage of wire to drive lights. All of this can be hard to keep track of and result in excessive code.
 
-A Dimmer is a type that represents an output. They are manipulated using a DCM object and have many
-properties. Typically, the pin is located on the local Arduino. However, a dimme
-	1. Pin/Remote ID
-		If a dimmer is intended to be located at this device
+If you use a Dimmer, however, the necessary operational properties, including bipolarity (non-dimming, as in relays), inverted (normally open vs normally closed), and output method (a pin or user defined method) are all handled within the Dimmer object so that you don't have to worry about them.
+
+Further, this libary includes special effects such as strobing, fading, and sequences. These effects are carried out in the `run()` procedure, which does the calculations and brightness updates when a special effect (technically called "function") is enabled. `run()` should be called more frequently for greater resolution or less frequently for better device performance but less resolution. Typically, `run()` is called every 20ms or 50ms, depending on your preference. Because parameters (such as fade step size) are limited to one byte, using lower values might limit you from using longer fades, while using higher values might cause quicker fades to look more like a jump. In personal experience, 50ms works great for the Arduino that controls my bedroom lights, but I preferred 20ms on my bicycle lights, which were intended to be flashier.
