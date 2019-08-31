@@ -20,7 +20,8 @@ class Dimmer {
 		
 		void setIntensity(uint8_t intensity);
 		void setIntensity(uint8_t intensity, DimmerController dc);
-		void setEffect(uint8_t function);
+		void setEffect(uint8_t effect);
+		void setEffect(uint8_t effect, DimmerController dc);
 		void setEffectData(uint8_t data, uint8_t place);
 		void setEffectData(uint8_t data[]);
 		void clearEffect();

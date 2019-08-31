@@ -279,6 +279,20 @@ void Dimmer::setIntensity(uint8_t intensity, DimmerController dc) {
 	}
 }
 
+void Dimmer::setEffect(uint8_t effect) {
+	if (_method != 2) {
+		_effect = effect;
+	}
+}
+
+void Dimmer::setEffect(uint8_t effect, DimmerController dc) {
+	if (_method != 2) {
+		_effect = effect;
+	} else {
+		dc._effectFunc(effect, *this);
+	}
+}
+
 void Dimmer::clearEffect() {
 	_effect = 0;
 	_effectData[0] = 0;
@@ -287,6 +301,14 @@ void Dimmer::clearEffect() {
 	_effectData[3] = 0;
 	_effectData[4] = 0;
 }
+
+void Dimmer::setEffectData(uint8_t data, uint8_t place) {
+	if (_method != 2) {
+		_data[place] = data;
+	}
+}
+
+
 
 //	SET PROPERTIES
 
