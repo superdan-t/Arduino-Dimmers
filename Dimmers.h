@@ -52,7 +52,7 @@ class Dimmer {
 		bool direct();
 		uint8_t pin();
 		bool initialized(); //Note that there is no "set" for this
-		Dimmer *nextInSequence();
+		Dimmer nextInSequence();
 		
 		//	Functions abstract
 		

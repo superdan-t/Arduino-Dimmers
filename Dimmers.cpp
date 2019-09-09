@@ -304,16 +304,50 @@ void Dimmer::clearEffect() {
 
 void Dimmer::setEffectData(uint8_t data, uint8_t place) {
 	if (_method != 2) {
-		_data[place] = data;
+		_effectData[place] = data;
+	} else {
+		
 	}
 }
 
-
+void Dimmer::setEffectData(uint8_t data[]) {
+	if (_method != 2) {
+		for (uint8_t i = 0; i < 5; i++) {
+			_effectData[i] = data[i];
+		}
+	} else {
+		
+	}
+}
 
 //	SET PROPERTIES
 
 void Dimmer::enable() {
 	_enabled = true;
+}
+
+void Dimmer::disable() {
+	_enabled = false;
+}
+
+void Dimmer::setBipolar() {
+	_bipolar = true;
+}
+
+void Dimmer::setDimming() {
+	_bipolar = false;
+}
+
+void Dimmer::setInverse() {
+	_inverse = true;
+}
+
+void Dimmer::setDirect() {
+	_inverse = false;
+}
+
+void Dimmer::setNextInSequence(Dimmer *dim) {
+	_nextInSequence = dim;
 }
 
 void Dimmer::setPin(uint8_t pin) {
@@ -328,4 +362,42 @@ void Dimmer::setPin(uint8_t pin, DimmerController dc) {
 	if (dc._pinFunc(pin)) {
 		setPin(pin);
 	}
+}
+
+//	GET PROPERTIES
+
+bool Dimmer::enabled() {
+	return _enabled;
+}
+
+bool Dimmer::disabled() {
+	return !_enabled;
+}
+
+bool Dimmer::bipolar() {
+	return _bipolar;
+}
+
+bool Dimmer::dimming() {
+	return !_bipolar;
+}
+
+bool Dimmer::inverse() {
+	return _inverse;
+}
+
+bool Dimmer::direct() {
+	return !_inverse;
+}
+
+uint8_t Dimmer::pin() {
+	return _pin;
+}
+
+bool Dimmer::initialized() {
+	return _initialized;
+}
+
+Dimmer Dimmer::nextInSequence() {
+	return *_nextInSequence;
 }
