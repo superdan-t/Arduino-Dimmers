@@ -23,5 +23,6 @@ dimming	KEYWORD2
 inverse	KEYWORD2
 direct	KEYWORD2
 pin	KEYWORD2
+intensity	KEYWORD2
 initialized	KEYWORD2
 nextInSequence	KEYWORD2

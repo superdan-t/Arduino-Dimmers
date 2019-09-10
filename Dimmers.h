@@ -51,6 +51,7 @@ class Dimmer {
 		bool inverse();
 		bool direct();
 		uint8_t pin();
+		uint8_t intensity();
 		bool initialized(); //Note that there is no "set" for this
 		Dimmer nextInSequence();
 		

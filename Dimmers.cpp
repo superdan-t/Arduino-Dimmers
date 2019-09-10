@@ -394,6 +394,10 @@ uint8_t Dimmer::pin() {
 	return _pin;
 }
 
+uint8_t Dimmer::intensity() {
+	return _intensity;
+}
+
 bool Dimmer::initialized() {
 	return _initialized;
 }
