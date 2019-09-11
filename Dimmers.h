@@ -41,6 +41,7 @@ class Dimmer {
 		void setNextInSequence(Dimmer *dim);
 		void setPin(uint8_t pin);
 		void setPin(uint8_t pin, DimmerController dc);
+		void setMethod(uint8_t method);
 		
 		//	Get Properties
 		
@@ -52,6 +53,7 @@ class Dimmer {
 		bool direct();
 		uint8_t pin();
 		uint8_t intensity();
+		uint8_t method();
 		bool initialized(); //Note that there is no "set" for this
 		Dimmer nextInSequence();
 		
