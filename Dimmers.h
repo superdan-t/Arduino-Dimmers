@@ -55,6 +55,8 @@ class Dimmer {
 		uint8_t intensity();
 		uint8_t method();
 		uint8_t effect();
+		uint8_t getEffectData(uint8_t index);
+		void getEffectData(uint8_t data[]);
 		bool initialized(); //Note that there is no "set" for this
 		Dimmer nextInSequence();
 		
