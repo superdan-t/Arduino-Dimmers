@@ -406,6 +406,10 @@ uint8_t Dimmer::method() {
 	return _method;
 }
 
+uint8_t Dimmer::effect() {
+	return _effect;	
+}
+
 bool Dimmer::initialized() {
 	return _initialized;
 }
