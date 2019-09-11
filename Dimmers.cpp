@@ -364,6 +364,10 @@ void Dimmer::setPin(uint8_t pin, DimmerController dc) {
 	}
 }
 
+void Dimmer::setMethod(uint8_t method) {
+	_method = method;	
+}
+
 //	GET PROPERTIES
 
 bool Dimmer::enabled() {
@@ -396,6 +400,10 @@ uint8_t Dimmer::pin() {
 
 uint8_t Dimmer::intensity() {
 	return _intensity;
+}
+
+uint8_t Dimmer::method() {
+	return _method;
 }
 
 bool Dimmer::initialized() {
