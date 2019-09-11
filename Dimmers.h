@@ -54,6 +54,7 @@ class Dimmer {
 		uint8_t pin();
 		uint8_t intensity();
 		uint8_t method();
+		uint8_t effect();
 		bool initialized(); //Note that there is no "set" for this
 		Dimmer nextInSequence();
 		
