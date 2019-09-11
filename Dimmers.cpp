@@ -410,9 +410,9 @@ uint8_t Dimmer::effect() {
 	return _effect;	
 }
 
-uint8_t Dimmer::getEffectData(uint8_t place) {
-	if (place <= 4) {
-		return _effectData[place];
+uint8_t Dimmer::getEffectData(uint8_t index) {
+	if (index <= 4) {
+		return _effectData[index];
 	} else {
 		return 0;
 	}
