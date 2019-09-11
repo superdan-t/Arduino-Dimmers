@@ -418,7 +418,7 @@ uint8_t Dimmer::getEffectData(uint8_t index) {
 	}
 }
 
-uint8_t Dimmer::getEffectData(uint8_t data[]) {
+void Dimmer::getEffectData(uint8_t data[]) {
 	data[0] = _effectData[0];
 	data[1] = _effectData[1];
 	data[2] = _effectData[2];
