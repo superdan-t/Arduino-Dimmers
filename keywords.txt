@@ -26,3 +26,7 @@ pin	KEYWORD2
 intensity	KEYWORD2
 initialized	KEYWORD2
 nextInSequence	KEYWORD2
+method  KEYWORD2
+setMethod KEYWORD2
+effect  KEYWORD2
+getEffectData KEYWORD2
