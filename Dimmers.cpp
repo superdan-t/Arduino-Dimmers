@@ -410,6 +410,22 @@ uint8_t Dimmer::effect() {
 	return _effect;	
 }
 
+uint8_t Dimmer::getEffectData(uint8_t place) {
+	if (place <= 4) {
+		return _effectData[place];
+	} else {
+		return 0;
+	}
+}
+
+uint8_t Dimmer::getEffectData(uint8_t data[]) {
+	data[0] = _effectData[0];
+	data[1] = _effectData[1];
+	data[2] = _effectData[2];
+	data[3] = _effectData[3];
+	data[4] = _effectData[4];
+}
+
 bool Dimmer::initialized() {
 	return _initialized;
 }
