@@ -1,3 +1,7 @@
+# Deprecated Project Notice
+I have not updated or otherwise maintained this project since 2019, my first semester of undergrad. In its current state, the project may be incomplete, buggy, completely broken, or absolutely fabulous. The code hasn’t been relevant in any of my technical projects since then, and I have no intention of ever using this project again. My program design skills, quality standards, language preferences, and other technical abilities have developed a lot since 2019, assisted by my interest in maintaining projects outside of academia. That being said, I am keeping many of my old projects public to reflect on my own educational journey.
+
+# Dimmers Library
 "Dimmers" is an abstraction of the Arduino pins intended for lights/drivers/relays.
 
 A Dimmer is an object that represents one "output," whether it is actually on another device or corresponds directly to a pin, and it's properties. There are a wide variety of ways to control an output device, whether it is an LED driver, relay, or so on. Relays don't use PWM. Some are normally open and others are normally closed. LED drivers and transistors normally use PWM to control intensity. Alternatively, you may be chaining two Arduinos together in order to minimize the usage of wire to drive lights. All of this can be hard to keep track of and result in excessive code.
